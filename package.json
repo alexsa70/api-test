@@ -1,0 +1,27 @@
+{
+  "name": "kaleido_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:setup": "playwright test --project=setup",
+    "test:api": "playwright test --project=api-tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alexsa70/api-test.git"
+  },
+  "author": "AlexL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexsa70/api-test/issues"
+  },
+  "homepage": "https://github.com/alexsa70/api-test#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.58.1",
+    "@types/node": "^25.2.0",
+    "dotenv": "^17.2.3",
+    "typescript": "^5.9.3"
+  }
+}
