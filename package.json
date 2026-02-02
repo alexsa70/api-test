@@ -21,7 +21,11 @@
   "devDependencies": {
     "@playwright/test": "^1.58.1",
     "@types/node": "^25.2.0",
+    "@types/pngjs": "^6.0.5",
     "dotenv": "^17.2.3",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0"
   }
 }

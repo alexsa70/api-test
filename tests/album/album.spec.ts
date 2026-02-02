@@ -2,6 +2,13 @@ import { test, expect, request } from '@playwright/test';
 import { ENDPOINTS } from '../../config/endpoints';
 import { getToken } from '../../utils/auth';
 
+/**
+ * Test suite for album
+ * @description This test suite tests the album functionality
+ * @author Alex
+ * @version 1.0.0
+ * @since 2026-02-02
+ */
 test.describe.serial('Album', () => {
   let apiContext: Awaited<ReturnType<typeof request.newContext>>;
   let albumId = '';
