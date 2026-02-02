@@ -3,12 +3,21 @@ import { ENDPOINTS } from '../config/endpoints';
 import * as fs from 'fs';
 import * as path from 'path';
 
-export async function authenticate() {
+export type AuthResult = {
+  token: string;
+  status: number;
+  fromCache: boolean;
+};
+
+export async function authenticate(
+  options: { force?: boolean } = {}
+): Promise<AuthResult> {
   const authFile = path.join(__dirname, '../.auth/user.json');
   let context: Awaited<ReturnType<typeof request.newContext>> | null = null;
+  const { force = false } = options;
 
   // Проверяем, существует ли валидный токен
-  if (fs.existsSync(authFile)) {
+  if (!force && fs.existsSync(authFile)) {
     try {
       const raw = fs.readFileSync(authFile, 'utf-8').trim();
       if (raw) {
@@ -17,8 +26,8 @@ export async function authenticate() {
           (item: any) => item.name === 'authToken'
         )?.value;
         if (token) {
-          console.log('✓ Используется существующий токен');
-          return;
+          console.log('✓ Existing token is used');
+          return { token, status: 200, fromCache: true };
         }
       }
       console.warn('⚠ Токен не найден или файл поврежден, переаутентификация...');
@@ -35,7 +44,8 @@ export async function authenticate() {
 
     const response = await context.post(ENDPOINTS.AUTH.LOGIN, {
       data: {
-        username: process.env.API_USERNAME || 'test_user',
+        orgName: process.env.API_ORG_NAME || 'Kaleidoo_AI',
+        identity: process.env.API_USERNAME || 'test_user',
         password: process.env.API_PASSWORD || 'test_password',
       },
     });
@@ -75,6 +85,7 @@ export async function authenticate() {
     );
 
     console.log('✓ Токен сохранен');
+    return { token, status: response.status(), fromCache: false };
   } finally {
     if (context) {
       await context.dispose();

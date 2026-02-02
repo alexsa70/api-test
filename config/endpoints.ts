@@ -1,13 +1,15 @@
 export const ENDPOINTS = {
   AUTH: {
-    LOGIN: '/auth/login',
+    LOGIN: '/login',
     LOGOUT: '/auth/logout',
   },
-  USERS: {
-    LIST: '/users',
-    GET: (id: string) => `/users/${id}`,
-    CREATE: '/users',
-    UPDATE: (id: string) => `/users/${id}`,
-    DELETE: (id: string) => `/users/${id}`,
+  TAGS: {
+    CREATE: '/api/tag_description_manager/create_tag',
+    CREATE_DESCRIPTION: '/api/tag_description_manager/create_description',
+    GET: '/api/tag_description_manager/get_tags',
+    UPDATE: '/api/tag_description_manager/update_tag',
+  },
+  FILES: {
+    CREATE: '/api/files/create',
   },
 } as const;

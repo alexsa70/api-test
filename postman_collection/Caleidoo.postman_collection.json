@@ -1,0 +1,1820 @@
+{
+  "info": {
+    "_postman_id": "fc326086-891d-48f2-a825-1c70d5ef633d",
+    "name": "Caleidoo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "11596736"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "Positive - Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "var jsonData = pm.response.json();",
+                  "pm.environment.set(\"token\", jsonData.token);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "disabled": true
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orgName\": \"Kaleidoo_AI\",\n    \"identity\": \"Tester\",\n    \"password\": \"29a!vW3!7TZEny\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/login",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "login"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/login' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"orgName\":\"Kaleidoo_AI\",\"identity\":\"Teste\",\"password\":\"nyhZz%7x6r\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Negative - Incorrect name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "disabled": true
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orgName\": \"Kaleidoo_AI\",\n    \"identity\": \"Testers\",\n    \"password\": \"nyhZz%7x6r\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/login",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "login"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/login' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"orgName\":\"Kaleidoo_AI\",\"identity\":\"Teste\",\"password\":\"nyhZz%7x6r\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Negative - Incorrect password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "disabled": true
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orgName\": \"Kaleidoo_AI\",\n    \"identity\": \"Tester\",\n    \"password\": \"nyhZz%7x6rTEST\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/login",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "login"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/login' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"orgName\":\"Kaleidoo_AI\",\"identity\":\"Teste\",\"password\":\"nyhZz%7x6r\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Negative - Incorrect organization",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "disabled": true
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orgName\": \"Kaleidoo_TEST\",\n    \"identity\": \"Tester\",\n    \"password\": \"nyhZz%7x6r\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/login",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "login"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/login' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"orgName\":\"Kaleidoo_AI\",\"identity\":\"Teste\",\"password\":\"nyhZz%7x6r\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Positive -Forgot Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"natitech@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/reset_password",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "reset_password"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/login' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"orgName\":\"Kaleidoo_AI\",\"identity\":\"Teste\",\"password\":\"nyhZz%7x6r\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Negative -Forgot Password | Not Exists in DB",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"alexsa70@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/reset_password",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "reset_password"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/login' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"orgName\":\"Kaleidoo_AI\",\"identity\":\"Teste\",\"password\":\"nyhZz%7x6r\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Negative -Forgot Password | Incorrect format",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"alexsa70\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/reset_password",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "reset_password"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/login' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"orgName\":\"Kaleidoo_AI\",\"identity\":\"Teste\",\"password\":\"nyhZz%7x6r\"}'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Album",
+      "item": [
+        {
+          "name": "Create a new album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "pm.environment.set(\"new_albumId\", jsonData.tag_id);",
+                  "",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*",
+                "disabled": true
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3Mzk4MjgsImlhdCI6MTc2OTY2NzgyOCwianRpIjoib25ydHJvOmM3ZjI1MDVlLTM3NDktNGIzMS05NjdmLWMwNmFjZTc1YjhmNiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiJkOTEyMjU3YS0wMjYwLTRjNzMtOWViNy05YThkYTM3NGQxOTIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.U5_c9qlpnqLall-8BaEGJNyNkaAGqUpUVBRP9Oa0FQm0gyZNvutD3_JGE1v8Mfp6Z7T8XPABexeyCc6lSF-AspcpLEu5HTuciuqiiJsWddSfVSYdD3ECJaApMWoUMEi0R8SlxOdeOSQCij0WQr7gnWL09OC-BaQ2gisMLkcoJ7QJi6_CLJ33MXop04wj4Wjm1jpVOfI1JcVU6_Lgtm67NWpVKawkSCYVAyDgYsoaxTBXIhS5gLmcxlk1VX3JTe0GZxTGO_JHndWmupAsioZnAFwyh4airHIAOxAB_KgEi7BBwwHu7X4TD_EqOXBQg-_JnkIqIIoPpCflolxOFLGijQ"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "disabled": true
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/albums",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"org_id\": \"{{orgId}}\",\n    \"name\": \"{{new_albumName}}\",\n    \"tag_type\": \"album\",\n    \"file_ids\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/tag_description_manager/create_tag",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "tag_description_manager",
+                "create_tag"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/tag_description_manager/create_tag' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3Mzk4MjgsImlhdCI6MTc2OTY2NzgyOCwianRpIjoib25ydHJvOmM3ZjI1MDVlLTM3NDktNGIzMS05NjdmLWMwNmFjZTc1YjhmNiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiJkOTEyMjU3YS0wMjYwLTRjNzMtOWViNy05YThkYTM3NGQxOTIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.U5_c9qlpnqLall-8BaEGJNyNkaAGqUpUVBRP9Oa0FQm0gyZNvutD3_JGE1v8Mfp6Z7T8XPABexeyCc6lSF-AspcpLEu5HTuciuqiiJsWddSfVSYdD3ECJaApMWoUMEi0R8SlxOdeOSQCij0WQr7gnWL09OC-BaQ2gisMLkcoJ7QJi6_CLJ33MXop04wj4Wjm1jpVOfI1JcVU6_Lgtm67NWpVKawkSCYVAyDgYsoaxTBXIhS5gLmcxlk1VX3JTe0GZxTGO_JHndWmupAsioZnAFwyh4airHIAOxAB_KgEi7BBwwHu7X4TD_EqOXBQg-_JnkIqIIoPpCflolxOFLGijQ' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/albums' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"org_id\":\"6733306465383e58c9b88306\",\"name\":\"AL\",\"tag_type\":\"album\",\"file_ids\":[]}'"
+          },
+          "response": []
+        },
+        {
+          "name": "GET Album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com"
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i"
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"org_id\": \"{{orgId}}\",\n    \"tag_id\": \"{{new_albumId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/tag_description_manager/get_tags",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "tag_description_manager",
+                "get_tags"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/tag_description_manager/get_tags' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"org_id\":\"6733306465383e58c9b88306\",\"tag_id\":\"697b00df93eed1d86466d944\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "GET All Albums",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*",
+                "disabled": true
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"org_id\": \"{{orgId}}\",\n    \"tag_type\": \"album\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/tag_description_manager/get_tags",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "tag_description_manager",
+                "get_tags"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/tag_description_manager/get_tags' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"org_id\":\"6733306465383e58c9b88306\",\"tag_id\":\"697b00df93eed1d86466d944\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*",
+                "disabled": true
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3Mzk4MjgsImlhdCI6MTc2OTY2NzgyOCwianRpIjoib25ydHJvOmM3ZjI1MDVlLTM3NDktNGIzMS05NjdmLWMwNmFjZTc1YjhmNiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiJkOTEyMjU3YS0wMjYwLTRjNzMtOWViNy05YThkYTM3NGQxOTIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.U5_c9qlpnqLall-8BaEGJNyNkaAGqUpUVBRP9Oa0FQm0gyZNvutD3_JGE1v8Mfp6Z7T8XPABexeyCc6lSF-AspcpLEu5HTuciuqiiJsWddSfVSYdD3ECJaApMWoUMEi0R8SlxOdeOSQCij0WQr7gnWL09OC-BaQ2gisMLkcoJ7QJi6_CLJ33MXop04wj4Wjm1jpVOfI1JcVU6_Lgtm67NWpVKawkSCYVAyDgYsoaxTBXIhS5gLmcxlk1VX3JTe0GZxTGO_JHndWmupAsioZnAFwyh4airHIAOxAB_KgEi7BBwwHu7X4TD_EqOXBQg-_JnkIqIIoPpCflolxOFLGijQ",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b0bc5751ec5ac9bec70a3",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"org_id\": \"{{orgId}}\",\n    \"tag_list\": [\n        {\n            \"id\": \"{{new_albumId}}\",\n            \"name\": \"{{new_albumName}}\",\n            \"tag_type\": \"album\",\n            \"action_type\": \"delete\"\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/tag_description_manager/update_tag",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "tag_description_manager",
+                "update_tag"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/tag_description_manager/update_tag' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3Mzk4MjgsImlhdCI6MTc2OTY2NzgyOCwianRpIjoib25ydHJvOmM3ZjI1MDVlLTM3NDktNGIzMS05NjdmLWMwNmFjZTc1YjhmNiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiJkOTEyMjU3YS0wMjYwLTRjNzMtOWViNy05YThkYTM3NGQxOTIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.U5_c9qlpnqLall-8BaEGJNyNkaAGqUpUVBRP9Oa0FQm0gyZNvutD3_JGE1v8Mfp6Z7T8XPABexeyCc6lSF-AspcpLEu5HTuciuqiiJsWddSfVSYdD3ECJaApMWoUMEi0R8SlxOdeOSQCij0WQr7gnWL09OC-BaQ2gisMLkcoJ7QJi6_CLJ33MXop04wj4Wjm1jpVOfI1JcVU6_Lgtm67NWpVKawkSCYVAyDgYsoaxTBXIhS5gLmcxlk1VX3JTe0GZxTGO_JHndWmupAsioZnAFwyh4airHIAOxAB_KgEi7BBwwHu7X4TD_EqOXBQg-_JnkIqIIoPpCflolxOFLGijQ' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b0bc5751ec5ac9bec70a3' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"org_id\":\"6733306465383e58c9b88306\",\"tag_list\":[{\"id\":\"697b0bc5751ec5ac9bec70a3\",\"name\":\"AL\",\"tag_type\":\"album\",\"action_type\":\"delete\"}]}'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "item": [
+        {
+          "name": "Add file to album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "pm.environment.set(\"file_ad\", jsonData.file_id);",
+                  "",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg",
+                "disabled": true
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/files"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "project_id",
+                  "type": "text",
+                  "value": "68af16da443fd05cb0c83c2a"
+                },
+                {
+                  "key": "org_id",
+                  "value": "6733306465383e58c9b88306",
+                  "type": "text"
+                },
+                {
+                  "key": "product",
+                  "value": "KalMedia",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "רקע-יפה-להורדה-חינם-40 2.jpg",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "postman-cloud:///1f0feacd-9456-4880-ad93-c2d0b257bf9e"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://kal-sense.prod.kaleidoo-dev.com/api/files/create",
+              "protocol": "https",
+              "host": [
+                "kal-sense",
+                "prod",
+                "kaleidoo-dev",
+                "com"
+              ],
+              "path": [
+                "api",
+                "files",
+                "create"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/files/create' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg' \\\n  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary2Im435xs3ddIwbEx' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw $'------WebKitFormBoundary2Im435xs3ddIwbEx\\r\\nContent-Disposition: form-data; name=\"project_id\"\\r\\n\\r\\n68af16da443fd05cb0c83c2a\\r\\n------WebKitFormBoundary2Im435xs3ddIwbEx\\r\\nContent-Disposition: form-data; name=\"org_id\"\\r\\n\\r\\n6733306465383e58c9b88306\\r\\n------WebKitFormBoundary2Im435xs3ddIwbEx\\r\\nContent-Disposition: form-data; name=\"product\"\\r\\n\\r\\nKalMedia\\r\\n------WebKitFormBoundary2Im435xs3ddIwbEx\\r\\nContent-Disposition: form-data; name=\"name\"\\r\\n\\r\\npuppy-animal-ipad-retina.jpg\\r\\n------WebKitFormBoundary2Im435xs3ddIwbEx\\r\\nContent-Disposition: form-data; name=\"file\"; filename=\"puppy-animal-ipad-retina.jpg\"\\r\\nContent-Type: image/jpeg\\r\\n\\r\\n\\r\\n------WebKitFormBoundary2Im435xs3ddIwbEx--\\r\\n'"
+          },
+          "response": []
+        },
+        {
+          "name": "Create description for picture",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*",
+                "disabled": true
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"org_id\": \"{{orgId}}\",\n    \"description\": \"Alex test via Postman\",\n    \"is_ai\": \"regular\",\n    \"files_project\": [\n        {\n            \"file_id\": \"{{file_id}}\",\n            \"project_id\": \"68af16da443fd05cb0c83c2a\"\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/tag_description_manager/create_description",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "tag_description_manager",
+                "create_description"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/tag_description_manager/create_description' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"org_id\":\"6733306465383e58c9b88306\",\"description\":\"Puppy picture\",\"is_ai\":\"regular\",\"files_project\":[{\"file_id\":\"697b68d2a5c853bfe5a3a5ef\",\"project_id\":\"68af16da443fd05cb0c83c2a\"}]}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a tag for picture",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*",
+                "disabled": true
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"org_id\": \"{{orgId}}\",\n    \"file_ids\": [\n        \"{{file_id}}\"\n    ],\n    \"tag_type\": \"regular\",\n    \"name\": \"{{EMPTY}}\",\n    \"project_id\": \"68af16da443fd05cb0c83c2a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/tag_description_manager/create_tag",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "tag_description_manager",
+                "create_tag"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/tag_description_manager/create_tag' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/album/697b00df93eed1d86466d944' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"org_id\":\"6733306465383e58c9b88306\",\"file_ids\":[\"697b68d2a5c853bfe5a3a5ef\"],\"tag_type\":\"regular\",\"name\":\"Puppy\",\"project_id\":\"68af16da443fd05cb0c83c2a\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Share_Files - Link",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*",
+                "disabled": true
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/files",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"file_ids\": [\n        \"{{file_id}}\"\n    ],\n    \"org_id\": \"{{orgId}}\",\n    \"project_ids\": [\n        \"68af16da443fd05cb0c83c2a\"\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/files/share_files",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "files",
+                "share_files"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/files/share_files' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/files' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"file_ids\":[\"697b085b94c7b3b6a3df854e\",\"697b06e594c7b3b6a3df854c\"],\"org_id\":\"6733306465383e58c9b88306\",\"project_ids\":[\"6882198cb753d1caf456e694\"]}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Share file via  email",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*",
+                "disabled": true
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/files",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"org_id\": \"{{orgId}}\",\n    \"project_id\": \"{{project_id}}\",\n    \"receiver\": \"alexsa70@gmail.com\",\n    \"subject\": \"EmailSubject\",\n    \"channel\": \"email\",\n    \"content\": \"Hi, this is Sense 👋\\n\\nA file has been shared with you via Kal Sense.\\n\\nClick here to download the files: https://storage.googleapis.com/kal-sense-organization-bucket-prod-v01/504c54ba-2821-44b3-ae2c-13f65a403a48.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=firebase-adminsdk-slwb6%40kal-sense-production.iam.gserviceaccount.com%2F20260129%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260129T141454Z&X-Goog-Expires=1800&X-Goog-SignedHeaders=host&X-Goog-Signature=7415426b406062bb515c1e94c8028d54b594da2f3243aca26025630fc0421fe3575399f0f0c60e980f48673a750a1d966927cda658c1b73f60d6693ed32e99ef1cebae015df5c3ce417dc0389ebf05cd5de9182bc01dd65ad73c5b0599f2f8a72f1ae5296c040417ac451dd04ca754637d1ede877eb4c4b3017ec72c535fff10c5a6ec46b15b2de3c99281d1a26c4f1a0ad04d5a7d11c2281ea7034879978476096e343574b29c50234db2c3931be280dc26ff5105da5c2b30c656eed03b18c99a1f304cc1408c6f2182b97d3ae2f0ba9d0b78c8e4b39517c703397e9d7023267a5892a87e866bcc6476c24a4e4984532d06f4bb70ba5fad8bdee39ba6643cd0\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/notifications/send_email",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "notifications",
+                "send_email"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/notifications/send_email' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/files' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"org_id\":\"6733306465383e58c9b88306\",\"project_id\":\"6882198cb753d1caf456e694\",\"receiver\":\"alexsa70@gmail.com\",\"subject\":\"EmailSubject\",\"channel\":\"email\",\"content\":\"Hi, this is Sense 👋\\n\\nA file has been shared with you via Kal Sense.\\n\\nClick here to download the files: https://storage.googleapis.com/kal-sense-organization-bucket-prod-v01/504c54ba-2821-44b3-ae2c-13f65a403a48.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=firebase-adminsdk-slwb6%40kal-sense-production.iam.gserviceaccount.com%2F20260129%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260129T141454Z&X-Goog-Expires=1800&X-Goog-SignedHeaders=host&X-Goog-Signature=7415426b406062bb515c1e94c8028d54b594da2f3243aca26025630fc0421fe3575399f0f0c60e980f48673a750a1d966927cda658c1b73f60d6693ed32e99ef1cebae015df5c3ce417dc0389ebf05cd5de9182bc01dd65ad73c5b0599f2f8a72f1ae5296c040417ac451dd04ca754637d1ede877eb4c4b3017ec72c535fff10c5a6ec46b15b2de3c99281d1a26c4f1a0ad04d5a7d11c2281ea7034879978476096e343574b29c50234db2c3931be280dc26ff5105da5c2b30c656eed03b18c99a1f304cc1408c6f2182b97d3ae2f0ba9d0b78c8e4b39517c703397e9d7023267a5892a87e866bcc6476c24a4e4984532d06f4bb70ba5fad8bdee39ba6643cd0\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Share file via whatsapp",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*",
+                "disabled": true
+              },
+              {
+                "key": "accept-language",
+                "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+                "disabled": true
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg",
+                "disabled": true
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com",
+                "disabled": true
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i",
+                "disabled": true
+              },
+              {
+                "key": "referer",
+                "value": "https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/files",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0",
+                "disabled": true
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\"",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors",
+                "disabled": true
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin",
+                "disabled": true
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"org_id\": \"6733306465383e58c9b88306\",\n    \"project_id\": \"68af16da443fd05cb0c83c2a\",\n    \"receiver\": \"+972544686191\",\n    \"channel\": \"whatsapp\",\n    \"content\": {\n        \"0\": \"HX1104fc0329786af46537ff47fb1a3755\",\n        \"1\": \"kal-sense-organization-bucket-prod-v01/510f98f0-5f11-4529-badb-0190cbe1fd26.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=firebase-adminsdk-slwb6%40kal-sense-production.iam.gserviceaccount.com%2F20260129%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260129T141902Z&X-Goog-Expires=1800&X-Goog-SignedHeaders=host&X-Goog-Signature=66114c0fc2e25ccfb49996710174c8a1a6bda81ae7bd5b515cd6ca0398092725aace2801fef7b4fb2a7dadd465753754984c4206f4be37bc388c79658bb3082647450be051441877a44ff981b7a6e2dad3cfc2a02a9669f98f9ca534416464436009f9f81cc54314fccc5b6fd68a6ad50893f0fe06ae3837ae5fe8552dbba4fc204b305297b7f1e09c48874d785a0a729ba92f228cdb5bda8786e99a2236494a3a3252421b88605ed420760120dd4fecabcbf3e7a1cdb617ed22a2057ee06d8bafa1c02f08c72a9c7284ed06dd6219d34b9d4dd543aec28b9e719f4be2ea024fa68fad9131345d849b3e5274517570ef0a4b73151d5da2d1f7ec07388a0353e3\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/api/notifications/send_whatsapp",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "notifications",
+                "send_whatsapp"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://kal-sense.prod.kaleidoo-dev.com/api/notifications/send_whatsapp' \\\n  -H 'accept: application/json, text/plain, */*' \\\n  -H 'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\n  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ1TmdKVnF4VmQ4WmJ3Zlp6RzBlNUlKYWszb1RmOXY1dXpWSThtSHJwcm9NIn0.eyJleHAiOjE3Njk3NjEwODcsImlhdCI6MTc2OTY4OTA4NywianRpIjoib25ydHJvOmUxZTllMWU0LWNiOTktNDE0ZS1iOTU4LTFlMzQxYTY4NzhhMiIsImlzcyI6Imh0dHA6Ly9rZXljbG9hay5rZXljbG9hay5zdmMuY2x1c3Rlci5sb2NhbC9yZWFsbXMva2FsLXNlbnNlLXByb2R1Y3Rpb24iLCJhdWQiOlsia2FsLXNlbnNlIiwiYWNjb3VudCJdLCJzdWIiOiI1ZTE3Yzc2MS02YmJkLTRlMzYtYTRmZC1mMDE1MjM1NGY3ZTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJrYWwtc2Vuc2UiLCJzaWQiOiIzM2EyYmFlMi05Y2Y4LTRiNmEtYTkwZC00NTU3MzVmN2VlOTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1rYWwtc2Vuc2UtcHJvZHVjdGlvbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRlc3RlciB0ZXN0ZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0ZXJfNjczMzMwNjQ2NTM4M2U1OGM5Yjg4MzA2IiwiZ2l2ZW5fbmFtZSI6IlRlc3RlciIsImZhbWlseV9uYW1lIjoidGVzdGVyIiwiZW1haWwiOiJuYXRpdGVjaEBnbWFpbC5jb20ifQ.w4W-3WT3phisF4zyD4hZVNPnswBdtk2wnH101jLtL_piiiFkmLb_k9I23cfp1mkTGC8krC6TPO5femYxMjLx4XAVWlWnzcdMRS9RlspC69CoBFvygleMQ__vyrmjZz3oLSMwju2u1kRJXpvgc7OEpMy_GiwDhFtpjMSdx8WRse1VgOGUhcX3qusqV66uG94rMNj7_bqTP_xyWbTcGMf1LdBgyEq502q_gtUi2BNmzk4gdn8ptZ9h72y1zjoTkOp0_Y1rDcbUVZSHI-A1mnQm1Se-ydcKNs85m3JCpCNNmECmMI5SStNCS00_K44n4Y8Ei2WBaQ2PXfXL9qdrXVu_Kg' \\\n  -H 'content-type: application/json' \\\n  -H 'origin: https://kal-sense.prod.kaleidoo-dev.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://kal-sense.prod.kaleidoo-dev.com/Kaleidoo_AI/media/files' \\\n  -H 'sec-ch-ua: \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36' \\\n  --data-raw '{\"org_id\":\"6733306465383e58c9b88306\",\"project_id\":\"68af16da443fd05cb0c83c2a\",\"receiver\":\"+972544686191\",\"channel\":\"whatsapp\",\"content\":{\"0\":\"HX1104fc0329786af46537ff47fb1a3755\",\"1\":\"kal-sense-organization-bucket-prod-v01/510f98f0-5f11-4529-badb-0190cbe1fd26.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=firebase-adminsdk-slwb6%40kal-sense-production.iam.gserviceaccount.com%2F20260129%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260129T141902Z&X-Goog-Expires=1800&X-Goog-SignedHeaders=host&X-Goog-Signature=66114c0fc2e25ccfb49996710174c8a1a6bda81ae7bd5b515cd6ca0398092725aace2801fef7b4fb2a7dadd465753754984c4206f4be37bc388c79658bb3082647450be051441877a44ff981b7a6e2dad3cfc2a02a9669f98f9ca534416464436009f9f81cc54314fccc5b6fd68a6ad50893f0fe06ae3837ae5fe8552dbba4fc204b305297b7f1e09c48874d785a0a729ba92f228cdb5bda8786e99a2236494a3a3252421b88605ed420760120dd4fecabcbf3e7a1cdb617ed22a2057ee06d8bafa1c02f08c72a9c7284ed06dd6219d34b9d4dd543aec28b9e719f4be2ea024fa68fad9131345d849b3e5274517570ef0a4b73151d5da2d1f7ec07388a0353e3\"}}'"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
