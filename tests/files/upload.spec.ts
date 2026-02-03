@@ -67,7 +67,7 @@ test.describe.serial('File upload', () => {
     await apiContext.dispose();
   });
 
-  test('Create file', async () => {
+  test('Create and upload file PNG', async () => {
     console.log('Test: Create file');
     const fileName = `sample_${Date.now()}.png`;
     const fileBuffer = makeRandomPngBuffer();
@@ -134,8 +134,8 @@ test.describe.serial('File upload', () => {
     console.log('Test pass successfully');
   });
 
-  test('Add file to the NEW collection', async () => {
-    console.log('Test: Add file to collection');
+  test('Create a NEW collection and add file to it', async () => {
+    console.log('Test: Create a NEW collection and add file to it');
     collectionName = `automation_${Date.now()}`;
     expect(fileId).toBeTruthy();
     const response = await apiContext.post(ENDPOINTS.TAGS.CREATE, {
